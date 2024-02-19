@@ -39,9 +39,7 @@ Two different types of Kubernetes nodes: -<br>
 
 ---
 
-<section>
-    <iframe src="https://www.canva.com/design/DAF9QST5Wds/rkniW-zzBNmHcd7koUL9bQ/view?utm_content=DAF9QST5Wds&utm_campaign=designshare&utm_medium=link&utm_source=editor" width="100%" height="100%"></iframe>
-</section>
+<a href="https://www.canva.com/design/DAF9QST5Wds/rkniW-zzBNmHcd7koUL9bQ/view?utm_content=DAF9QST5Wds&utm_campaign=designshare&utm_medium=link&utm_source=editor" data-preview-link>Test</a>
 
 ---
 
