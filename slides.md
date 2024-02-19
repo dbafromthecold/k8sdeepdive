@@ -51,6 +51,7 @@ Components for controlling the cluster<br>
 ---
 
 ### The API Server
+<!-- .slide: style="text-align: left;"> -->
 <img src="images/api-128.png" style="float: right"/>
 
 RESTful API endpoint for interacting with the Kubernetes cluster: -
