@@ -37,8 +37,14 @@ TBD
 ---
 
 ### Control Node Components
-<!-- .slide: style="text-align: left;"> -->
-TBD
+<img src="images/control-128.png" style="float: right"/>
+
+Components for controlling the cluster<br>
+- kube-apiserver<br>
+- etcd<br>
+- kube-scheduler<br>
+- kube-controller-manager<br>
+- cloud-controller-manager<br>
 
 ---
 
@@ -66,12 +72,19 @@ TBD
 
 ### Worker Node Components
 <!-- .slide: style="text-align: left;"> -->
-TBD
+<img src="images/node-128.png" style="float: right"/>
+
+Running and maintaining pods<br>
+
+- kubelet<br>
+- kube-proxy<br>
+- Container runtime
 
 ---
 
 ### Kubelet
 <!-- .slide: style="text-align: left;"> -->
+
 TBD
 
 ---
@@ -96,6 +109,7 @@ TBD
 
 ### Statefulsets
 <!-- .slide: style="text-align: left;"> -->
+
 TBD
 
 ---
@@ -114,7 +128,17 @@ TBD
 ### Pod Eviction Timings
 <!-- .slide: style="text-align: left;"> -->
 
-TBD
+<pre><code>
+tolerations:
+- key: "node.kubernetes.io/unreachable"
+  operator: "Exists"
+  effect: "NoExecute"
+  tolerationSeconds: 10
+- key: "node.kubernetes.io/not-ready"
+  operator: "Exists"
+  effect: "NoExecute"
+  tolerationSeconds: 10
+</pre></code>
 
 ---
 
