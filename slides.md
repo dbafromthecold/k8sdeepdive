@@ -22,3 +22,94 @@
 ## Session Aim
 <!-- .slide: style="text-align: left;"> -->
 To dive into Kubernetes
+
+
+---
+
+### Node Types
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+### Control Node Components
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+### The API Server
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+## ETCD
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+### KubeScheduler
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+### Worker Node Components
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+### Kubelet
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+### Container Runtime
+<!-- .slide: style="text-align: left;"> -->
+
+TBD
+
+---
+
+### Deployments
+<!-- .slide: style="text-align: left;"> -->
+
+TBD
+
+---
+
+### Statefulsets
+<!-- .slide: style="text-align: left;"> -->
+TBD
+
+---
+
+## Daemonsets
+<!-- .slide: style="text-align: left;"> -->
+
+TBD
+
+---
+
+### Pod Eviction Timings
+<!-- .slide: style="text-align: left;"> -->
+
+TBD
+
+---
+
+### Persisting Data
+
+TBD
+
+---
+
+## Resources
+
+TBD
+
+---
