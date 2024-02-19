@@ -157,7 +157,7 @@ TBD
 
 ### Pod Eviction Timings
 
-<pre><code data-line-numbers="4-7|5-8">tolerations:
+<pre><code data-line-numbers="2-5|6-9">tolerations:
 - key: "node.kubernetes.io/unreachable"
   operator: "Exists"
   effect: "NoExecute"
