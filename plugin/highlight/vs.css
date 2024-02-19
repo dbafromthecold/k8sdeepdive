@@ -25,21 +25,28 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
   color: #00f;
 }
 
+/****************************************************/
+
 /* custom for my code blocks */
 .hljs-string,
 .hljs-literal {
   color: blue;
 }
 
+/* custom for my code blocks */
 .hljs-number {
   color: greenyellow
 }
 
 /* custom for my code blocks */
+.hljs-attribute {
+  color: #a31515;
+}
+
+/****************************************************/
 
 .hljs-title,
 .hljs-section,
-.hljs-attribute,
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-type,
