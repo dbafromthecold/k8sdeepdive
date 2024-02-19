@@ -50,6 +50,8 @@ Two different types of Kubernetes nodes: -<br>
 
 ---
 
+### Control Node
+
 <img src="images/control-node.gif" style="float: right"/>
 
 ---
