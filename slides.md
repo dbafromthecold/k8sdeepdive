@@ -19,20 +19,21 @@
 
 ---
 
-## Session Aim
+### Session Aim
 <!-- .slide: style="text-align: left;"> -->
-To dive into Kubernetes
-
+To dive into Kubernetes to explore the various components and options for deploying applications
 
 ---
 
 ### Node Types
 <!-- .slide: style="text-align: left;"> -->
-TBD
+Two different types of Kubernetes nodes: -<br>
+- Control Nodes<br>
+- Worker Nodes<br>
 
 ---
 
-## Control Nodes
+# Control Nodes
 
 ---
 
@@ -49,24 +50,39 @@ Components for controlling the cluster<br>
 ---
 
 ### The API Server
-<!-- .slide: style="text-align: left;"> -->
-TBD
+<img src="images/api-128.png" style="float: right"/>
+
+RESTful API endpoint for interacting with the Kubernetes cluster: -
+- The front end for the Kubernetes control plane
+- Authentication and Authorisation
+- Validates incoming requests
+- Manages lifecycle of Kubernetes resources
 
 ---
 
-## ETCD
-<!-- .slide: style="text-align: left;"> -->
-TBD
+### ETCD
+<img src="images/etcd-128.png" style="float: right"/>
+
+A distibuted key value store which provides: -
+- A consistent view of the cluster state
+- Persistence - ensure cluster state is durable
+- Designed for high availability and scalability
+- Backup and restore
 
 ---
 
 ### KubeScheduler
-<!-- .slide: style="text-align: left;"> -->
-TBD
+<img src="images/sched-128.png" style="float: right"/>
+
+Responsible for selecting a node to run a pod: -
+- Evaluates nodes in cluster
+- Implements scheduling policies
+- Resource allocation
+- Load Balancing
 
 ---
 
-## Worker Nodes
+# Worker Nodes
 
 ---
 
@@ -75,28 +91,34 @@ TBD
 <img src="images/node-128.png" style="float: right"/>
 
 Running and maintaining pods<br>
-
 - kubelet<br>
 - kube-proxy<br>
-- Container runtime
+- container runtime
 
 ---
 
 ### Kubelet
-<!-- .slide: style="text-align: left;"> -->
+<img src="images/kubelet-128.png" style="float: right"/>
 
-TBD
+Responsible for managing the lifecycle of pods on a node: -
+- Interacts with the container runtime
+- Monitors and reports node resource utilisation
+- Ensure that containers are running and healthy
 
 ---
 
 ### Container Runtime
-<!-- .slide: style="text-align: left;"> -->
+<img src="images/docker.png" style="float: right"/>
 
-TBD
+Component that interacts with the kubelet to: -
+- Manage the lifecycle of containers
+- Pull images from registry
+- Provides isolation
+- Used to be Docker
 
 ---
 
-## Deploying Applications
+# Deploying Applications
 
 ---
 
@@ -114,14 +136,14 @@ TBD
 
 ---
 
-## Daemonsets
+### Daemonsets
 <!-- .slide: style="text-align: left;"> -->
 
 TBD
 
 ---
 
-## Controlling high availability
+# Controlling high availability
 
 ---
 
@@ -149,7 +171,7 @@ TBD
 
 ---
 
-## Resources
+### Resources
 <!-- .slide: style="text-align: left;"> -->
 
 TBD
