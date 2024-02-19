@@ -40,6 +40,7 @@ Two different types of Kubernetes nodes: -<br>
 ### Control Node Components
 <img src="images/control-128.png" style="float: right"/>
 
+<!-- .slide: style="text-align: left;"> -->
 Components for controlling the cluster<br>
 - kube-apiserver<br>
 - etcd<br>
