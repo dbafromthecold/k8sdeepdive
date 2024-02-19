@@ -32,6 +32,10 @@ TBD
 
 ---
 
+## Control Nodes
+
+---
+
 ### Control Node Components
 <!-- .slide: style="text-align: left;"> -->
 TBD
@@ -56,6 +60,10 @@ TBD
 
 ---
 
+## Worker Nodes
+
+---
+
 ### Worker Node Components
 <!-- .slide: style="text-align: left;"> -->
 TBD
@@ -72,6 +80,10 @@ TBD
 <!-- .slide: style="text-align: left;"> -->
 
 TBD
+
+---
+
+## Deploying Applications
 
 ---
 
@@ -95,6 +107,10 @@ TBD
 
 ---
 
+## Controlling high availability
+
+---
+
 ### Pod Eviction Timings
 <!-- .slide: style="text-align: left;"> -->
 
@@ -103,13 +119,13 @@ TBD
 ---
 
 ### Persisting Data
+<!-- .slide: style="text-align: left;"> -->
 
 TBD
 
 ---
 
 ## Resources
+<!-- .slide: style="text-align: left;"> -->
 
 TBD
-
----
