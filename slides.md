@@ -21,12 +21,14 @@
 
 ### Session Aim
 <!-- .slide: style="text-align: left;"> -->
+
 To dive into Kubernetes to explore the various components and options for deploying applications
 
 ---
 
 ### Node Types
 <!-- .slide: style="text-align: left;"> -->
+
 Two different types of Kubernetes nodes: -<br>
 - Control Nodes<br>
 - Worker Nodes<br>
@@ -38,10 +40,10 @@ Two different types of Kubernetes nodes: -<br>
 ---
 
 ### Control Node Components
+<!-- .slide: style="text-align: left;"> -->
 <img src="images/control-128.png" style="float: right"/>
 
-<!-- .slide: style="text-align: left;"> -->
-Components for controlling the cluster<br>
+Components for controlling the cluster: -<br>
 - kube-apiserver<br>
 - etcd<br>
 - kube-scheduler<br>
@@ -54,8 +56,8 @@ Components for controlling the cluster<br>
 <!-- .slide: style="text-align: left;"> -->
 <img src="images/api-128.png" style="float: right"/>
 
-RESTful API endpoint for interacting with the Kubernetes cluster: -
-- The front end for the Kubernetes control plane
+RESTful API endpoint: -
+- The control plane front end
 - Authentication and Authorisation
 - Validates incoming requests
 - Manages lifecycle of Kubernetes resources
@@ -63,20 +65,22 @@ RESTful API endpoint for interacting with the Kubernetes cluster: -
 ---
 
 ### ETCD
+<!-- .slide: style="text-align: left;"> -->
 <img src="images/etcd-128.png" style="float: right"/>
 
-A distibuted key value store which provides: -
-- A consistent view of the cluster state
-- Persistence - ensure cluster state is durable
-- Designed for high availability and scalability
+A distibuted key value store: -
+- A consistent cluster view
+- Persist cluster state
+- High availability and scalability
 - Backup and restore
 
 ---
 
 ### KubeScheduler
+<!-- .slide: style="text-align: left;"> -->
 <img src="images/sched-128.png" style="float: right"/>
 
-Responsible for selecting a node to run a pod: -
+Selects nodes to run pods: -
 - Evaluates nodes in cluster
 - Implements scheduling policies
 - Resource allocation
@@ -100,19 +104,21 @@ Running and maintaining pods<br>
 ---
 
 ### Kubelet
+<!-- .slide: style="text-align: left;"> -->
 <img src="images/kubelet-128.png" style="float: right"/>
 
-Responsible for managing the lifecycle of pods on a node: -
+Lifecycle management of pods: -
 - Interacts with the container runtime
-- Monitors and reports node resource utilisation
+- Monitors node utilisation
 - Ensure that containers are running and healthy
 
 ---
 
 ### Container Runtime
+<!-- .slide: style="text-align: left;"> -->
 <img src="images/docker.png" style="float: right"/>
 
-Component that interacts with the kubelet to: -
+Interacts with the kubelet to: -
 - Manage the lifecycle of containers
 - Pull images from registry
 - Provides isolation
