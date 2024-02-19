@@ -25,7 +25,11 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
   color: #00f;
 }
 
-.hljs-string,
+.hljs-string {
+  color: blue;
+}
+
+
 .hljs-title,
 .hljs-section,
 .hljs-attribute,
@@ -34,7 +38,7 @@ Visual Studio-like style based on original C# coloring by Jason Diamond <jason@d
 .hljs-template-variable,
 .hljs-type,
 .hljs-addition {
-  color: white;
+  color: #a31515;
 }
 
 .hljs-deletion,
