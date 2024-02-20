@@ -240,5 +240,5 @@ Three main concepts in Kubernetes: -
 </font>
 
 <p align="center">
-  <img src="images/k8sdeepdiveQr.png" />
+  <img src="images/k8sdeepdiveQr.jpg" />
 </p>
