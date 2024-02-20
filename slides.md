@@ -98,14 +98,22 @@ Selects nodes to run pods: -
 <!-- .slide: style="text-align: left;"> -->
 <img src="images/c-m-128.png" style="float: right"/>
 
-TBD
+Runs the controller processes: -
+- Node controller
+- Namespace Controller
+- Service Controller
+- StatefulSet Controller
 
 ---
 
 ### Control Node High Availability
 <!-- .slide: style="text-align: left;"> -->
 
-TBD
+Control Plane HA is a must!
+- Multiple control nodes
+- Load balancing across nodes
+- Etcd cluster
+- Managed K8s clusters
 
 ---
 
@@ -163,7 +171,11 @@ Interacts with the kubelet to: -
 <!-- .slide: style="text-align: left;"> -->
 <img src="images/docker.png" style="float: right"/>
 
-TBD
+First container runtime used by Kubernetes
+- Docker support hardcoded - dockershim
+- Added support for other runtimes
+- Implementation of the CRI
+- No longer need to maintain dockershim
 
 ---
 
@@ -214,11 +226,19 @@ TBD
 ### Persisting Data
 <!-- .slide: style="text-align: left;"> -->
 
-TBD
+Three main concepts in Kubernetes: -
+- Storage Classes
+- Persistent Volumes
+- Persistent Volume Claims
 
 ---
 
 ### Resources
 <!-- .slide: style="text-align: left;"> -->
+<font size="6">
+<a href="https://github.com/dbafromthecold/k8sdeepdive">https://github.com/dbafromthecold/k8sdeepdive</a><br>
+</font>
 
-TBD
+<p align="center">
+  <img src="images/k8sdeepdiveQr.png" />
+</p>
