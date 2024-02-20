@@ -93,7 +93,7 @@ A distibuted key value store: -
 
 ---
 
-### KubeScheduler
+### Kube-Scheduler
 <!-- .slide: style="text-align: left;"> -->
 <img src="images/sched-128.png" style="float: right"/>
 
@@ -102,6 +102,21 @@ Selects nodes to run pods: -
 - Implements scheduling policies
 - Resource allocation
 - Load Balancing
+
+---
+
+### kube-controller-manager
+<!-- .slide: style="text-align: left;"> -->
+<img src="images/c-m-128.png" style="float: right"/>
+
+TBD
+
+---
+
+### Control Node High Availability
+<!-- .slide: style="text-align: left;"> -->
+
+TBD
 
 ---
 
