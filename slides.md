@@ -127,7 +127,19 @@ Running and maintaining pods<br>
 Lifecycle management of pods: -
 - Interacts with the container runtime
 - Monitors node utilisation
-- Ensure that containers are running and healthy
+- Containers are running and healthy
+
+---
+
+### Kube-proxy
+<!-- .slide: style="text-align: left;"> -->
+<img src="images/k-proxy-128.png" style="float: right"/>
+
+Maintains network rules on nodes: -
+- Communication between pods and services
+- Service discovery
+- Endpoint monitoring
+- Uses IP tables (or IPVS)
 
 ---
 
@@ -140,6 +152,14 @@ Interacts with the kubelet to: -
 - Pull images from registry
 - Provides isolation
 - Used to be Docker
+
+---
+
+### Why no longer Docker?
+<!-- .slide: style="text-align: left;"> -->
+<img src="images/docker.png" style="float: right"/>
+
+TBD
 
 ---
 
