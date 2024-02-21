@@ -4,7 +4,4 @@ metadata:
   name: mssql-storage
 provisioner: kubernetes.io/portworx-volume
 parameters:
-  openstorage.io/auth-secret-name: px-user-token
-  openstorage.io/auth-secret-namespace: kube-system
-  allowVolumeExpansion: "true"
   repl: "3"
