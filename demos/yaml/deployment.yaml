@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqlserver2022-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: sqlserver2022-pod
+  template:
+    metadata:
+      labels:
+        name: sqlserver2022-pod
+    spec:
+      securityContext:
+        fsGroup: 10001
+      containers:
+      - name: sqlserver2022
+        image: mcr.microsoft.com/mssql/server:2022-CU11-ubuntu-20.04
+        ports:
+        - containerPort: 1433
+        livenessProbe:
+          tcpSocket:
+            port: 1433
+          initialDelaySeconds: 15
+          periodSeconds: 30
+        env:
+        - name: MSSQL_PID
+          value: "Developer"
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: MSSQL_AGENT_ENABLED
+          value: "Y"
+        - name: MSSQL_SA_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mssql-sa-secret
+              key: MSSQL_SA_PASSWORD
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "1000m"
+          limits:
+            memory: "2048Mi"
+            cpu: "2000m"
+      tolerations:
+      - key: "node.kubernetes.io/unreachable"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 10
+      - key: "node.kubernetes.io/not-ready"
+        operator: "Exists"
+        effect: "NoExecute"
+        tolerationSeconds: 10
+  strategy:
+    type: Recreate
