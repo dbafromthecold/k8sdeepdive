@@ -171,7 +171,7 @@ Interacts with the kubelet to: -
 <!-- .slide: style="text-align: left;"> -->
 <img src="images/docker.png" style="float: right"/>
 
-First container runtime used by Kubernetes
+First container runtime used by Kubernetes: -
 - Docker support hardcoded - dockershim
 - Added support for other runtimes
 - Implementation of the CRI
@@ -186,21 +186,32 @@ First container runtime used by Kubernetes
 ### Deployments
 <!-- .slide: style="text-align: left;"> -->
 
-TBD
+Declarative method to spin up applications: -
+- Desired state in yaml file
+- Self-healing
+- Easy updates and rollbacks
+- Typically for stateless apps
 
 ---
 
 ### Statefulsets
 <!-- .slide: style="text-align: left;"> -->
 
-TBD
+Valuable for applications requiring: -
+- Unique network identifiers
+- Persistent storage
+- Graceful deployment and scaling
+- Ordered rolling updates
 
 ---
 
 ### Daemonsets
 <!-- .slide: style="text-align: left;"> -->
 
-TBD
+Runs a pod on every node in the cluster: -
+- Log collection
+- Monitoring
+- Not really a use case for SQL Server!
 
 ---
 
