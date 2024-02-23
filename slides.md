@@ -21,10 +21,11 @@
 
 ### Session Aim
 <!-- .slide: style="text-align: left;"> -->
-<img src="images/down_the_rabbit_hole.png" style="float: right"/>
+<img src="images/down_the_rabbit_hole.gif" style="float: right"/>
 
-To dive into Kubernetes to explore the various components<br>
-and options for deploying applications
+To dive into Kubernetes to explore the various<br>
+components and options for deploying<br>
+applications
 
 ---
 
