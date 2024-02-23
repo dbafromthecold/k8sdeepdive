@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mssql
+  name: mssql-statefulset
 spec:
   serviceName: "mssql"
   replicas: 1
   podManagementPolicy: Parallel
   selector:
     matchLabels:
-      app: mssql
+      name: mssql-pod
   template:
     metadata:
       labels:
-        app: mssql
+        name: mssql-pod
     spec:
       securityContext:
         fsGroup: 10001
@@ -26,11 +26,11 @@ spec:
           effect: "NoExecute"
           tolerationSeconds: 10
       containers:
-        - name: mssql
+        - name: mssql-container
           image: mcr.microsoft.com/mssql/server:2022-CU11-ubuntu-20.04
           ports:
             - containerPort: 1433
-              name: tcpsql
+              name: mssql-port
           env:
             - name: MSSQL_PID
               value: "Developer"
@@ -38,6 +38,10 @@ spec:
               value: "Y"
             - name: MSSQL_AGENT_ENABLED
               value: "1"
+            - name: MSSQL_DATA_DIR
+              value: /var/opt/sqlserver/data
+            - name: MSSQL_LOG_DIR
+              value: /var/opt/sqlserver/log
             - name: MSSQL_SA_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -56,11 +60,11 @@ spec:
             initialDelaySeconds: 15
             periodSeconds: 30
           volumeMounts:
-            - name: system
+            - name: mssql-system
               mountPath: /var/opt/mssql
-            - name: user
+            - name: mssql-data
               mountPath: /var/opt/sqlserver/data
-            - name: log
+            - name: mssql-log
               mountPath: /var/opt/sqlserver/log
   volumeClaimTemplates:
     - metadata:

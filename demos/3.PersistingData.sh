@@ -17,8 +17,13 @@ cd /mnt/c/git/k8sdeepdive/demos/persisting-data
 
 
 
+# view statefulset
+cat statefulset.yaml && echo ""
+
+
+
 # view storage class yaml
-cat storage-class.yaml
+cat storage-class.yaml && echo ""
 
 
 
@@ -28,17 +33,37 @@ kubectl apply -f storage-class.yaml
 
 
 # view storage class
-kubectl get sc
+kubectl get storageclass
 
 
 
-# view persistent volume claim yaml
-cat pvc.yaml
+# deploy secret (if not already created)
+kubectl apply -f secret.yaml
 
 
 
-# create persistent volume claim
-kubectl apply -f pvc.yaml
+# view secret
+kubectl get secrets
+
+
+
+# deploy sqlserver
+kubectl apply -f statefulset.yaml
+
+
+
+# view statefulset
+kubectl get statefulsets -o wide
+
+
+
+# describe statefulset
+kubectl describe statefulset
+
+
+
+# view pods
+kubectl get pods -o wide
 
 
 
@@ -52,78 +77,48 @@ kubectl get pv
 
 
 
-# describe persistent volume 
-kubectl describe pv
+# view all in default namespace
+kubectl get all
 
 
 
-# view secret yaml
-cat secret.yaml
+# view service yaml
+cat service.yaml && echo ""
 
 
 
-# view secret
-kubectl get secrets
-
-
-
-# describe secret
-kubectl describe secret mssql-sa-secret
-
-
-
-# try and get more info on secret
-kubectl get secret mssql-sa-secret -o yaml
-
-
-
-# decode secret
-kubectl get secret mssql-sa-secret -o jsonpath='{ .data.MSSQL_SA_PASSWORD }' | base64 --decode && echo ""
-
-
-
-# view deployment 
-cat deployment.yaml
-
-
-
-# deploy sqlserver
-kubectl apply -f deployment.yaml
-
-
-
-# view deployments
-kubectl get deployments
-
-
-
-# view pods
-kubectl get pods
+# deploy service
+kubectl apply -f service.yaml
 
 
 
 # view service
-kubectl get service
+kubectl get service mssql-service
+
+
+
+# grab service external IP address
+IP_ADDRESS=$(kubectl get service mssql-service -o jsonpath="{.status.loadBalancer.ingress[0].ip}") && echo $IP_ADDRESS
 
 
 
 # connect via mssql-cli
-mssql-cli -S localhost -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
+mssql-cli -S $IP_ADDRESS -U sa -P Testing1122 -Q "SELECT @@VERSION AS [Version];"
 
 
 
 # create a database
-mssql-cli -S localhost -U sa -P Testing1122 -Q "CREATE DATABASE [testdatabase];"
+mssql-cli -S $IP_ADDRESS -U sa -P Testing1122 -Q "CREATE DATABASE [testdatabase];"
 
 
 
 # view databases
-mssql-cli -S localhost -U sa -P Testing1122 -Q "SELECT [name] FROM sys.databases;"
+mssql-cli -S $IP_ADDRESS -U sa -P Testing1122 -Q "SELECT [name] FROM sys.databases;"
 
 
 
 # view database files
-mssql-cli -S localhost -U sa -P Testing1122 -Q "USE [testdatabase]; EXEC sp_helpfile;"
+mssql-cli -S $IP_ADDRESS -U sa -P Testing1122 -Q "USE [testdatabase]; EXEC sp_helpfile;"
 
 
 
@@ -133,8 +128,8 @@ kubectl get pods -o wide
 
 
 # delete pod
-$PODNAME=$(kubectl get pods --no-headers -o custom-columns=":metadata.name")
-kubectl delete pod $PODNAME
+POD_NAME=$(kubectl get pods --no-headers -o custom-columns=":metadata.name") && echo $POD_NAME
+kubectl delete pod $POD_NAME
 
 
 
@@ -143,12 +138,17 @@ kubectl get pods -o wide
 
 
 
+# describe statefulset
+kubectl describe statefulset mssql-statefulset
+
+
+
 # view persistent volume claim
 kubectl get pvc
 
 
 
-# view volume
+# view persistent volumes
 kubectl get pv
 
 
@@ -159,13 +159,13 @@ kubectl get service
 
 
 # view databases
-mssql-cli -S localhost -U sa -P Testing1122 -Q "SELECT [name] FROM sys.databases;"
+mssql-cli -S $IP_ADDRESS -U sa -P Testing1122 -Q "SELECT [name] FROM sys.databases;"
 
 
 
 # clean up
-kubectl delete deployment sqlserver2022-deployment
-kubectl delete service sqlserver2022-service
-kubectl delete secret mssql-sa-secret
-kubectl delete pvc mssql-data mssql-log mssql-system
+kubectl delete statefulset mssql-statefulset
+kubectl delete service mssql-service
+kubectl delete secret mssql-sa-password
+kubectl delete pvc --all
 kubectl delete sc mssql-storage

@@ -28,7 +28,7 @@ kubectl get pods -n kube-system
 
 
 # check etcd status
-sudo ETCDCTL_API=3 etcdctl -w table \
+ssh ap-k8s-01 -- sudo ETCDCTL_API=3 etcdctl -w table \
 --endpoints 127.0.0.1:2379 \
 --cacert /etc/kubernetes/pki/etcd/ca.crt \
 --cert /etc/kubernetes/pki/etcd/server.crt \
@@ -63,12 +63,18 @@ kubectl get pods -o wide
 
 
 # connect to app within pod
-ssh ap-k8s-01 -- curl 10.244.2.4 --no-progress-meter
+POD_ID=$(kubectl get pod nginx -o jsonpath="{.status.podIP}") && echo $POD_ID
+ssh ap-k8s-01 -- curl $POD_ID --no-progress-meter
 
 
 
 # delete pod
 kubectl delete pod nginx
+
+
+
+# confirm pod deletion
+kubectl get pods
 
 
 

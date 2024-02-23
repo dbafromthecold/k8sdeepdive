@@ -17,8 +17,38 @@ cd /mnt/c/git/k8sdeepdive/demos/yaml
 
 
 
+# view secret yaml
+cat secret.yaml
+
+
+
+# create secret
+kubectl apply -f secret.yaml
+
+
+
+# view secret
+kubectl get secrets
+
+
+
+# describe secret
+kubectl describe secret mssql-sa-password
+
+
+
+# try and get more info on secret
+kubectl get secret mssql-sa-password -o yaml
+
+
+
+# decode secret
+kubectl get secret mssql-sa-password -o jsonpath='{ .data.MSSQL_SA_PASSWORD }' | base64 --decode && echo ""
+
+
+
 # view daemonset yaml
-cat daemonset.yaml
+cat daemonset.yaml && echo ""
 
 
 
@@ -28,7 +58,7 @@ kubectl apply -f daemonset.yaml
 
 
 # confirm daemonset
-kubctl get daemonset
+kubectl get daemonset
 
 
 
@@ -43,42 +73,12 @@ kubectl get pods -o wide
 
 
 # delete daemonset
-kubectl delete daemonset mssql
-
-
-
-# view statefulset yaml
-cat statefulset.yaml
-
-
-
-# deploy statefulset
-kubectl apply -f statefulset.yaml
-
-
-
-# confirm statefulset
-kubctl get statefulset mssql
-
-
-
-# view more information on statefulset
-kubectl describe statefulset mssql
-
-
-
-# view pods in statefulset
-kubectl get pods -o wide
-
-
-
-# delete statefulset
-kubectl delete statefulset mssql
+kubectl delete daemonset mssql-daemonset
 
 
 
 # view deployment yaml
-cat deployment.yaml
+cat deployment.yaml && echo ""
 
 
 
@@ -88,7 +88,7 @@ kubectl apply -f deployment.yaml
 
 
 # confirm deployment
-kubctl get deployment
+kubectl get deployment
 
 
 
@@ -103,4 +103,36 @@ kubectl get pods -o wide
 
 
 # delete deployment
-kubectl delete deployment mssql
+kubectl delete deployment mssql-deployment
+
+
+
+# view statefulset yaml
+cat statefulset.yaml && echo ""
+
+
+
+# deploy statefulset
+kubectl apply -f statefulset.yaml
+
+
+
+# confirm statefulset
+kubectl get statefulset mssql-statefulset
+
+
+
+# view more information on statefulset
+kubectl describe statefulset mssql-statefulset
+
+
+
+# view pods in statefulset
+kubectl get pods -o wide
+
+
+
+# delete statefulset
+kubectl delete statefulset mssql-statefulset
+
+
