@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sqlserver2022-deployment
+  name: mssql-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: sqlserver2022-pod
+      name: mssql-pod
   template:
     metadata:
       labels:
-        name: sqlserver2022-pod
+        name: mssql-pod
     spec:
       securityContext:
         fsGroup: 10001
       containers:
-      - name: sqlserver2022
+      - name: mssql-container
         image: mcr.microsoft.com/mssql/server:2022-CU11-ubuntu-20.04
         ports:
         - containerPort: 1433
@@ -34,7 +34,7 @@ spec:
         - name: MSSQL_SA_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mssql-sa-secret
+              name: mssql-sa-password
               key: MSSQL_SA_PASSWORD
         volumeMounts:
         - name: system
