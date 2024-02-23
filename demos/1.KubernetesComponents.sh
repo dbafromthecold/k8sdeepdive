@@ -143,6 +143,11 @@ kubectl get pods
 
 
 
+# view pod events
+kubectl describe pod
+
+
+
 # delete pod
 kubectl delete pod nginx-ap-k8s-02
 
