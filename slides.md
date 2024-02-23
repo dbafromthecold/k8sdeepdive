@@ -30,9 +30,23 @@ To dive into Kubernetes to explore the various components and options for deploy
 ### Node Types
 <!-- .slide: style="text-align: left;"> -->
 
-Two different types of Kubernetes nodes: -<br>
-- Control Nodes<br>
-- Worker Nodes<br>
+Two different types of Kubernetes nodes: -
+
+<div style="display: flex; justify-content: center;">
+  <div style="text-align: center;">
+    <p>
+      Control Nodes
+    </p>
+    <img src="images/control-128.png" />
+  </div>
+  <div style="width: 200px;"></div> <!-- Adjust the width to control the spacing -->
+  <div style="text-align: center;">
+    <p>
+      Worker Nodes
+    </p>
+    <img src="images/node-128.png" />
+  </div>
+</div>
 
 ---
 
@@ -50,12 +64,14 @@ Two different types of Kubernetes nodes: -<br>
 <!-- .slide: style="text-align: left;"> -->
 <img src="images/control-128.png" style="float: right"/>
 
-Components for controlling the cluster: -<br>
-- kube-apiserver<br>
-- etcd<br>
-- kube-scheduler<br>
-- kube-controller-manager<br>
-- cloud-controller-manager<br>
+Managing the cluster: -
+<ul>
+  <li class="fragment">kube-apiserver</li>
+  <li class="fragment">etcd</li>
+  <li class="fragment">kube-scheduler</li>
+  <li class="fragment">kube-controller-manager</li>
+  <li class="fragment">cloud-controller-manager</li>
+</ul>
 
 ---
 
@@ -126,10 +142,12 @@ Control Plane HA is a must!
 <!-- .slide: style="text-align: left;"> -->
 <img src="images/node-128.png" style="float: right"/>
 
-Running and maintaining pods<br>
-- kubelet<br>
-- kube-proxy<br>
-- container runtime
+Running applications: -
+<ul>
+  <li class="fragment">kubelet</li>
+  <li class="fragment">kube-proxy</li>
+  <li class="fragment">container runtime</li>
+</ul>
 
 ---
 
@@ -170,13 +188,13 @@ Interacts with the kubelet to: -
 
 ### Why no longer Docker?
 <!-- .slide: style="text-align: left;"> -->
-<img src="images/docker.png" style="float: right"/>
+<img src="images/cross_docker.png" style="float: left; border: 20px solid rgba(0, 0, 0, 0);"/>
+<br>
 
-First container runtime used by Kubernetes: -
-- Docker support hardcoded - dockershim
+- Docker support hardcoded
 - Added support for other runtimes
 - Implementation of the CRI
-- No longer need to maintain dockershim
+- Dockershim no longer needed
 
 ---
 
