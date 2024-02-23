@@ -21,8 +21,10 @@
 
 ### Session Aim
 <!-- .slide: style="text-align: left;"> -->
+<img src="images/down_the_rabbit_hole.png" style="float: right"/>
 
-To dive into Kubernetes to explore the various components and options for deploying applications
+To dive into Kubernetes to explore the various components<br>
+and options for deploying applications
 
 ---
 
@@ -183,6 +185,16 @@ First container runtime used by Kubernetes: -
 
 ---
 
+### Daemonsets
+<!-- .slide: style="text-align: left;"> -->
+
+Runs a pod on every node in the cluster: -
+- Log collection
+- Monitoring
+- Not really a use case for SQL Server!
+
+---
+
 ### Deployments
 <!-- .slide: style="text-align: left;"> -->
 
@@ -202,16 +214,6 @@ Valuable for applications requiring: -
 - Persistent storage
 - Graceful deployment and scaling
 - Ordered rolling updates
-
----
-
-### Daemonsets
-<!-- .slide: style="text-align: left;"> -->
-
-Runs a pod on every node in the cluster: -
-- Log collection
-- Monitoring
-- Not really a use case for SQL Server!
 
 ---
 
