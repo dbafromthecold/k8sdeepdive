@@ -68,6 +68,26 @@ ssh ap-k8s-01 -- curl $POD_ID --no-progress-meter
 
 
 
+# get node pod is running on
+NODE=$(kubectl get pod nginx -o jsonpath="{.spec.nodeName}") && echo $NODE
+
+
+
+# get status of containerd
+ssh $NODE -- systemctl status --lines 0 containerd
+
+
+
+# list all running containers
+ssh $NODE -- sudo ctr -n k8s.io container ls
+
+
+
+# list nginx container
+ssh $NODE -- sudo ctr -n k8s.io container ls | grep nginx
+
+
+
 # delete pod
 kubectl delete pod nginx
 
