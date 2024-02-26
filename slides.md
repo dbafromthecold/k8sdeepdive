@@ -256,10 +256,29 @@ Valuable for applications requiring: -
 ### Persisting Data
 <!-- .slide: style="text-align: left;"> -->
 
-Three main concepts in Kubernetes: -
-- Storage Classes
-- Persistent Volumes
-- Persistent Volume Claims
+<div style="display: flex; justify-content: center;">
+  <div style="text-align: center;">
+    <p>
+      Storage Class
+    </p>
+    <img src="images/sc-128.png" />
+  </div>
+  <div style="width: 200px;"></div>
+  <div style="text-align: center;">
+    <p>
+      Persistent Volumes
+    </p>
+    <img src="images/pv-128.png" />
+  </div>
+  <div style="width: 200px;"></div>
+  <div style="text-align: center;">
+    <p>
+      Persistent Volume Claims
+    </p>
+    <img src="images/pvc-128.png" />
+  </div>
+</div>
+
 
 ---
 
