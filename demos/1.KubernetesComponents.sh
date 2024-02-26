@@ -62,6 +62,24 @@ kubectl get pods -o wide
 
 
 
+# get api server endpoint
+kubectl cluster-info
+
+
+
+# get kubernetes version via curl
+curl --cacert /home/apruski/k8s/apiserver.crt https://10.0.0.41:6443/version
+
+
+
+# get info on pod from api server
+curl -X GET https://10.0.0.41:6443/api/v1/namespaces/default/pods \
+    --cacert /home/apruski/k8s/apiserver.crt \
+    --cert /home/apruski/k8s/clientcert.pem \
+    --key /home/apruski/k8s/clientkey.pem
+
+
+
 # connect to app within pod
 POD_ID=$(kubectl get pod nginx -o jsonpath="{.status.podIP}") && echo $POD_ID
 ssh ap-k8s-01 -- curl $POD_ID --no-progress-meter
