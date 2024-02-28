@@ -74,9 +74,9 @@ curl --cacert /home/apruski/k8s/apiserver.crt https://10.0.0.41:6443/version
 
 # get info on pod from api server
 curl -X GET https://10.0.0.41:6443/api/v1/namespaces/default/pods \
-    --cacert /home/apruski/k8s/apiserver.crt \
-    --cert /home/apruski/k8s/clientcert.pem \
-    --key /home/apruski/k8s/clientkey.pem
+    --cacert /mnt/c/git/PrivateCodeRepo/Kubernetes/Hyper-V/local-lab-certs/apiserver.crt \
+    --cert /mnt/c/git/PrivateCodeRepo/Kubernetes/Hyper-V/local-lab-certs/clientcert.pem \
+    --key /mnt/c/git/PrivateCodeRepo/Kubernetes/Hyper-V/local-lab-certs/clientkey.pem
 
 
 
@@ -131,6 +131,11 @@ kubectl describe deployment nginx
 
 
 
+# view replicaset
+kubectl get replicasets
+
+
+
 # get information on pod in deployment
 kubectl get pods -o wide --show-labels
 
@@ -149,6 +154,11 @@ kubectl delete pod $POD
 
 # confirm new pod
 kubectl get pods -o wide
+
+
+
+# view replicaset events
+kubectl describe replicasets nginx
 
 
 
@@ -184,6 +194,11 @@ cat ~/nginx.yaml | ssh ap-k8s-02 "sudo tee -a /etc/kubernetes/manifests/nginx.ya
 
 # view created pod
 kubectl get pods
+
+
+
+# view kube-system pods
+kubectl get pods -n kube-system
 
 
 

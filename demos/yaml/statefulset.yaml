@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata:
   name: mssql-statefulset
 spec:
- # serviceName: "mssql"
+  serviceName: "mssql"
   replicas: 1
   selector:
     matchLabels:

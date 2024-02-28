@@ -97,6 +97,11 @@ kubectl describe deployment mssql
 
 
 
+# view replicaset events
+kubectl describe replicaset mssql
+
+
+
 # view pods in deployment
 kubectl get pods -o wide
 
