@@ -17,6 +17,11 @@ kubectl get nodes -o wide
 
 
 
+# get component statuses
+kubectl get componentstatus
+
+
+
 # get namespaces in cluster
 kubectl get namespaces
 
