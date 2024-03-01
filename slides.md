@@ -27,6 +27,10 @@ To dive into Kubernetes to explore the various components and options for deploy
 
 ---
 
+# Kubernetes Nodes
+
+---
+
 ### Node Types
 <!-- .slide: style="text-align: left;"> -->
 
@@ -198,6 +202,10 @@ Interacts with the kubelet to: -
 
 ---
 
+# Demo
+
+---
+
 # Deploying Applications
 
 ---
@@ -234,6 +242,10 @@ Valuable for applications requiring: -
 
 ---
 
+# Demo
+
+---
+
 # Controlling high availability
 
 ---
@@ -250,6 +262,10 @@ Valuable for applications requiring: -
   effect: "NoExecute"
   tolerationSeconds: 10
 </pre></code>
+
+---
+
+# Persisting Data
 
 ---
 
@@ -279,6 +295,9 @@ Valuable for applications requiring: -
   </div>
 </div>
 
+---
+
+# Demo
 
 ---
 
