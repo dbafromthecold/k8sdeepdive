@@ -127,7 +127,7 @@ kubectl create deployment nginx --image=nginx
 
 
 # view deployment information
-kubectl get deployments
+kubectl get deployments -o wide
 
 
 
