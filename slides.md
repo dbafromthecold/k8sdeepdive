@@ -155,17 +155,6 @@ Running applications: -
 
 ---
 
-### Kubelet
-<!-- .slide: style="text-align: left;"> -->
-<img src="images/kubelet-128.png" style="float: right"/>
-
-Lifecycle management of pods: -
-- Interacts with the container runtime
-- Monitors node utilisation
-- Containers are running and healthy
-
----
-
 ### Kube-proxy
 <!-- .slide: style="text-align: left;"> -->
 <img src="images/k-proxy-128.png" style="float: right"/>
@@ -175,6 +164,17 @@ Maintains network rules on nodes: -
 - Service discovery
 - Endpoint monitoring
 - Uses IP tables (or IPVS)
+
+---
+
+### Kubelet
+<!-- .slide: style="text-align: left;"> -->
+<img src="images/kubelet-128.png" style="float: right"/>
+
+Lifecycle management of pods: -
+- Interacts with the container runtime
+- Monitors node utilisation
+- Containers are running and healthy
 
 ---
 
