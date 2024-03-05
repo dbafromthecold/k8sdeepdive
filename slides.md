@@ -28,6 +28,7 @@ To dive into Kubernetes to explore the various components and options for deploy
 ---
 
 # Kubernetes Nodes
+<!-- .slide: style="text-align: left;"> -->
 
 ---
 
@@ -41,20 +42,21 @@ Two different types of Kubernetes nodes: -
     <p>
       Control Nodes
     </p>
-    <img src="images/control-128.png" />
+    <img src="images/control-256.png" />
   </div>
   <div style="width: 200px;"></div> <!-- Adjust the width to control the spacing -->
   <div style="text-align: center;">
     <p>
       Worker Nodes
     </p>
-    <img src="images/node-128.png" />
+    <img src="images/node-256.png" />
   </div>
 </div>
 
 ---
 
 # Control Nodes
+<!-- .slide: style="text-align: left;"> -->
 
 ---
 
@@ -66,7 +68,7 @@ Two different types of Kubernetes nodes: -
 
 ### Control Node Components
 <!-- .slide: style="text-align: left;"> -->
-<img src="images/control-128.png" style="float: right"/>
+<img src="images/control-256.png" style="float: right"/>
 
 Managing the cluster: -
 <ul>
@@ -144,12 +146,12 @@ Control Plane HA is a must!
 
 ### Worker Node Components
 <!-- .slide: style="text-align: left;"> -->
-<img src="images/node-128.png" style="float: right"/>
+<img src="images/node-256.png" style="float: right"/>
 
 Running applications: -
 <ul>
-  <li class="fragment">kubelet</li>
   <li class="fragment">kube-proxy</li>
+  <li class="fragment">kubelet</li>
   <li class="fragment">container runtime</li>
 </ul>
 
@@ -203,10 +205,12 @@ Interacts with the kubelet to: -
 ---
 
 # Demo
+<!-- .slide: style="text-align: left;"> -->
 
 ---
 
 # Deploying Applications
+<!-- .slide: style="text-align: left;"> -->
 
 ---
 
@@ -243,10 +247,12 @@ Valuable for applications requiring: -
 ---
 
 # Demo
+<!-- .slide: style="text-align: left;"> -->
 
 ---
 
 # Controlling high availability
+<!-- .slide: style="text-align: left;"> -->
 
 ---
 
@@ -266,6 +272,7 @@ Valuable for applications requiring: -
 ---
 
 # Persisting Data
+<!-- .slide: style="text-align: left;"> -->
 
 ---
 
@@ -273,21 +280,19 @@ Valuable for applications requiring: -
 <!-- .slide: style="text-align: left;"> -->
 
 <div style="display: flex; justify-content: center;">
-  <div style="text-align: center;">
+  <div style="text-align: center; flex-grow: 1; flex-basis: 0;">
     <p>
-      Storage Class
+      Storage Classes
     </p>
     <img src="images/sc-128.png" />
   </div>
-  <div style="width: 200px;"></div>
-  <div style="text-align: center;">
+  <div style="text-align: center; flex-grow: 1; flex-basis: 0;">
     <p>
       Persistent Volumes
     </p>
     <img src="images/pv-128.png" />
   </div>
-  <div style="width: 200px;"></div>
-  <div style="text-align: center;">
+  <div style="text-align: center; flex-grow: 1; flex-basis: 0;">
     <p>
       Persistent Volume Claims
     </p>
@@ -298,6 +303,7 @@ Valuable for applications requiring: -
 ---
 
 # Demo
+<!-- .slide: style="text-align: left;"> -->
 
 ---
 
