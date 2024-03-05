@@ -42,6 +42,11 @@ endpoint status
 
 
 
+# view control node taint
+kubectl describe node ap-k8s-01
+
+
+
 # deploy a pod
 kubectl run nginx --image=nginx
 
