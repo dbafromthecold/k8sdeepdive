@@ -131,6 +131,7 @@ Runs the controller processes: -
 
 ### Control Node High Availability
 <!-- .slide: style="text-align: left;"> -->
+<img src="images/control_node_ha.png" style="float: right"/>
 
 Control Plane HA is a must!
 - Multiple control nodes
