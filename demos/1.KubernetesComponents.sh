@@ -146,13 +146,18 @@ kubectl get replicasets
 
 
 
-# get information on pod in deployment
-kubectl get pods -o wide --show-labels
+# view replicaset events
+kubectl describe replicaset
 
 
 
 # view pod events
 kubectl describe pod -l app=nginx
+
+
+
+# get information on pod in deployment
+kubectl get pods -o wide --show-labels
 
 
 
