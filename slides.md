@@ -2,6 +2,10 @@
 
 ---
 
+<img src="images/datatune_sponsors.png" style="float: right"/>
+
+---
+
 ## Andrew Pruski
 
 <img src="images/apruski.jpg" style="float: right"/>
