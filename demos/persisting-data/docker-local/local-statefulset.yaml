@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mssql-statefulset
+spec:
+  serviceName: "mssql"
+  replicas: 1
+  podManagementPolicy: Parallel
+  selector:
+    matchLabels:
+      name: mssql-pod
+  template:
+    metadata:
+      labels:
+        name: mssql-pod
+    spec:
+      securityContext:
+        fsGroup: 10001
+      tolerations:
+        - key: "node.kubernetes.io/unreachable"
+          operator: "Exists"
+          effect: "NoExecute"
+          tolerationSeconds: 10
+        - key: "node.kubernetes.io/not-ready"
+          operator: "Exists"
+          effect: "NoExecute"
+          tolerationSeconds: 10
+      containers:
+        - name: mssql-container
+          image: mcr.microsoft.com/mssql/server:2022-CU11-ubuntu-20.04
+          ports:
+            - containerPort: 1433
+              name: mssql-port
+          env:
+            - name: MSSQL_PID
+              value: "Developer"
+            - name: ACCEPT_EULA
+              value: "Y"
+            - name: MSSQL_AGENT_ENABLED
+              value: "1"
+            - name: MSSQL_DATA_DIR
+              value: /var/opt/sqlserver/data
+            - name: MSSQL_LOG_DIR
+              value: /var/opt/sqlserver/log
+            - name: MSSQL_SA_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mssql-sa-password
+                  key: MSSQL_SA_PASSWORD        
+          resources:
+            requests:
+              memory: "1024Mi"
+              cpu: "1000m"
+            limits:
+              memory: "2048Mi"
+              cpu: "2000m"
+          livenessProbe:
+            tcpSocket:
+              port: 1433
+            initialDelaySeconds: 15
+            periodSeconds: 30
+          volumeMounts:
+            - name: mssql-system
+              mountPath: /var/opt/mssql
+            - name: mssql-data
+              mountPath: /var/opt/sqlserver/data
+            - name: mssql-log
+              mountPath: /var/opt/sqlserver/log
+  volumeClaimTemplates:
+    - metadata:
+        name: mssql-system
+      spec:
+        accessModes:
+         - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: local-storage
+    - metadata:
+        name: mssql-data
+      spec:
+        accessModes:
+         - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: local-storage
+    - metadata:
+        name: mssql-log
+      spec:
+        accessModes:
+            - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: local-storage
