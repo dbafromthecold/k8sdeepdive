@@ -2,6 +2,13 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: mssql-storage
-provisioner: kubernetes.io/portworx-volume
-parameters:
-  repl: "3"
+  annotations:
+    openebs.io/cas-type: local
+    cas.openebs.io/config: |
+      - name: StorageType
+        value: hostpath
+      - name: BasePath
+        value: /var/local-hostpath
+provisioner: openebs.io/local
+reclaimPolicy: Delete
+volumeBindingMode: WaitForFirstConsumer

@@ -22,7 +22,7 @@ cat statefulset.yaml && echo ""
 
 
 
-# view storage class yaml
+# view storage class yaml - using https://openebs.io/
 cat storage-class.yaml && echo ""
 
 
