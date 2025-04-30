@@ -87,9 +87,10 @@ Managing the cluster: -
 
 RESTful API endpoint: -
 - The control plane front end
-- Authentication and Authorisation
-- Validates incoming requests
-- Manages lifecycle of Kubernetes resources
+- Exposes the Kubernetes API
+- Handles Authentication and Authorisation
+- Validates and processes incoming REST API requests
+- Only component that directly communicates with etcd
 
 ---
 
