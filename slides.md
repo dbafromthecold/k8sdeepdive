@@ -60,12 +60,6 @@ Two different types of Kubernetes nodes: -
 
 ---
 
-### Control Node
-<!-- .slide: style="text-align: left;"> -->
-<img src="images/control-node.gif" style="float: right"/>
-
----
-
 ### Control Node Components
 <!-- .slide: style="text-align: left;"> -->
 <img src="images/control-256.png" style="float: right"/>
