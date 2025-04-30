@@ -170,7 +170,7 @@ Maintains network rules on nodes: -
 
 Lifecycle management of pods: -
 - Interacts with the container runtime
-- Monitors node utilisation
+- Reports node status
 - Containers are running and healthy
 
 ---
