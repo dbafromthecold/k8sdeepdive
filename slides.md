@@ -246,26 +246,6 @@ Valuable for applications requiring: -
 
 ---
 
-# Controlling high availability
-<!-- .slide: style="text-align: left;"> -->
-
----
-
-### Pod Eviction Timings
-
-<pre><code data-line-numbers="1-9|2-5|6-9">tolerations:
-- key: "node.kubernetes.io/unreachable"
-  operator: "Exists"
-  effect: "NoExecute"
-  tolerationSeconds: 10
-- key: "node.kubernetes.io/not-ready"
-  operator: "Exists"
-  effect: "NoExecute"
-  tolerationSeconds: 10
-</pre></code>
-
----
-
 # Persisting Data
 <!-- .slide: style="text-align: left;"> -->
 
