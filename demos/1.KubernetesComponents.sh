@@ -84,9 +84,9 @@ curl --cacert /home/apruski/k8s/apiserver.crt https://10.0.0.41:6443/version
 
 # get info on pod from api server
 curl -X GET https://10.0.0.41:6443/api/v1/namespaces/default/pods \
-    --cacert /mnt/c/git/PrivateCodeRepo/Kubernetes/Hyper-V/local-lab-certs/apiserver.crt \
-    --cert /mnt/c/git/PrivateCodeRepo/Kubernetes/Hyper-V/local-lab-certs/clientcert.pem \
-    --key /mnt/c/git/PrivateCodeRepo/Kubernetes/Hyper-V/local-lab-certs/clientkey.pem
+--cacert /mnt/c/git/PrivateCodeRepo/Kubernetes/Hyper-V/local-lab-certs/apiserver.crt \
+--cert /mnt/c/git/PrivateCodeRepo/Kubernetes/Hyper-V/local-lab-certs/clientcert.pem \
+--key /mnt/c/git/PrivateCodeRepo/Kubernetes/Hyper-V/local-lab-certs/clientkey.pem
 
 
 
