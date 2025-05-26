@@ -257,7 +257,7 @@ Valuable for applications requiring: -
 <div style="display: flex; justify-content: center;">
   <div style="text-align: center; flex-grow: 1; flex-basis: 0;">
     <p>
-      Storage 
+      Storage <br>
       Classes
     </p>
     <img src="images/sc-128.png" />
