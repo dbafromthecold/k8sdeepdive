@@ -254,7 +254,7 @@ Valuable for applications requiring: -
 ### Persisting Data
 <!-- .slide: style="text-align: left;"> -->
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: space-evenly; align-items: center; width: 100%;">
   <div style="text-align: center; flex-grow: 1; flex-basis: 0;">
     <p>
       Storage <br>
