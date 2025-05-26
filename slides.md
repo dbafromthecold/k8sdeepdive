@@ -251,7 +251,7 @@ Valuable for applications requiring: -
 
 ---
 
-### Persisting Data - test
+### Persisting Data
 <!-- .slide: style="text-align: left;"> -->
 
 <div style="display: flex; justify-content: center;">
