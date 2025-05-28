@@ -28,8 +28,12 @@ To dive into Kubernetes to explore the various components and options for deploy
 ---
 
 ### Agenda
-
-TBD
+<!-- .slide: style="text-align: left;"> -->
+<ul>
+  <li class="fragment">Node Components</li>
+  <li class="fragment">Deploying Applications</li>
+  <li class="fragment">Persisting Data</li>
+</ul>
 
 ---
 
@@ -166,7 +170,7 @@ Maintains network rules on nodes: -
 - Communication between pods and services
 - Service discovery
 - Endpoint monitoring
-- Uses IP tables (or IPVS)
+- Uses iptables (or IPVS)
 
 ---
 
@@ -205,7 +209,7 @@ Interacts with the kubelet to: -
 
 ---
 
-# Demo
+# Demo - Node Components
 <!-- .slide: style="text-align: left;"> -->
 
 ---
@@ -247,7 +251,7 @@ Valuable for applications requiring: -
 
 ---
 
-# Demo
+# Demo - Deploying Applications
 <!-- .slide: style="text-align: left;"> -->
 
 ---
@@ -276,7 +280,8 @@ Valuable for applications requiring: -
   </div>
   <div style="text-align: center; flex-grow: 1; flex-basis: 0;">
     <p>
-      Persistent Volume Claims
+      Persistent Volume <br> 
+      Claims
     </p>
     <img src="images/pvc-128.png" />
   </div>
@@ -284,7 +289,7 @@ Valuable for applications requiring: -
 
 ---
 
-# Demo
+# Demo - Persisting Data
 <!-- .slide: style="text-align: left;"> -->
 
 ---
