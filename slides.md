@@ -211,7 +211,8 @@ Interacts with the kubelet to: -
 
 ---
 
-# Demo - Node Components
+# Demo:
+# Node Components
 <!-- .slide: style="text-align: left;"> -->
 
 ---
@@ -253,7 +254,8 @@ Valuable for applications requiring: -
 
 ---
 
-# Demo - Deploying Applications
+# Demo: 
+# Deploying Applications
 <!-- .slide: style="text-align: left;"> -->
 
 ---
@@ -291,7 +293,8 @@ Valuable for applications requiring: -
 
 ---
 
-# Demo - Persisting Data
+# Demo:
+# Persisting Data
 <!-- .slide: style="text-align: left;"> -->
 
 ---
