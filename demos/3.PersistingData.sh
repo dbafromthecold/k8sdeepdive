@@ -15,7 +15,7 @@
 #    - Deploys SQL Server as a StatefulSet, automatically provisioning required storage.
 #
 # - Provisioning & Validation
-#    - Verifying SQL Server, PVCs, and PVs.
+#    - Verifying SQL Server, QoS, PVCs, and PVs.
 #
 # - Confirming Data Persistence
 #    - Deleting pod and checking user database persisted.
@@ -77,6 +77,16 @@ kubectl describe statefulset
 
 # view pods
 kubectl get pods -o wide
+
+
+
+# describe pod and get QoS (BestEffort, Burstable, or Guaranteed)
+# https://kubernetes.io/docs/concepts/workloads/pods/pod-qos/
+# ensures that the nodes provide and commit the required resources
+# least likely to face eviction
+# guaranteed not to be killed until they exceed their limits or there are no lower-priority Pods that can be preempted from the Node 
+# may not acquire resources beyond their specified limits
+kubectl describe pod | grep "QoS Class"
 
 
 
