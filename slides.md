@@ -34,8 +34,7 @@ To dive into Kubernetes to explore the various components and options for deploy
   <li class="fragment">Deploying Applications</li>
   <li class="fragment">Persisting Data</li>
   <li class="fragment">Demos!</li>
-  <li class="fragment"> </li>
-  <li class="fragment">This session is for anyone who's played around with Kubernetes but wants to dive a little deeper</li>
+  <li class="fragment" style="margin-top: 1em;">This session is for anyone who's played around with Kubernetes but wants to dive a little deeper</li>
 </ul>
 
 ---
