@@ -5,7 +5,20 @@
 # @dbafromthecold
 # dbafromthecold@gmail.com
 # https://github.com/dbafromthecold/k8sdeepdive
+#
 # Persisting data
+#
+# - Storage Class Setup
+#    - Creating a custom storage class.
+#
+# - Deploying SQL Server with StatefulSet
+#    - Deploys SQL Server as a StatefulSet, automatically provisioning required storage.
+#
+# - Provisioning & Validation
+#    - Verifying SQL Server, PVCs, and PVs.
+#
+# - Confirming Data Persistence
+#    - Deleting pod and checking user database persisted.
 #
 ############################################################################
 ############################################################################

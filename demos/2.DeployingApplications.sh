@@ -5,7 +5,20 @@
 # @dbafromthecold
 # dbafromthecold@gmail.com
 # https://github.com/dbafromthecold/k8sdeepdive
+#
 # Deploying Applications
+#
+# - Secrets Management
+#     - Protecting sensitive data in Kubernetes.
+# 
+# - DaemonSet Deployment
+#     - Deploying applications to every node in the cluster.
+# 
+# - Deployment Deployment
+#     - Deploying applications to the cluster, and inspecting the controllers
+# 
+# - StatefulSet Deployment
+#     - Using a statefulset and verifying the controller.
 #
 ############################################################################
 ############################################################################

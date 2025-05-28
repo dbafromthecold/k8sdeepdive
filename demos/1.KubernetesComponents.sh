@@ -5,7 +5,23 @@
 # @dbafromthecold
 # dbafromthecold@gmail.com
 # https://github.com/dbafromthecold/k8sdeepdive
+# 
 # Kubernetes Components
+#
+# - Cluster Health & Component Checks 
+#     - Inspects node status, component health, and etcd.
+# 
+# - Pod & Deployment Management
+#     - Creates, describes, deletes, and observes pods and deployments.
+# 
+# - API Server Interactions
+#     - Retrieves info directly from the Kubernetes API.
+# 
+# - Node-Level Debugging
+#     - Check containerd and kubelet, and list running containers.
+# 
+# - Static Pod Demonstration
+#      - Generate YAML for a static pod
 #
 ############################################################################
 ############################################################################
@@ -19,6 +35,11 @@ kubectl get nodes -o wide
 
 # get component statuses
 kubectl get componentstatus
+
+
+
+# use the new command
+kubectl get --raw='/readyz?verbose'
 
 
 
@@ -49,11 +70,6 @@ kubectl describe node ap-k8s-01
 
 # deploy a pod
 kubectl run nginx --image=nginx
-
-
-
-# confirm pod created
-kubectl events
 
 
 
@@ -212,13 +228,18 @@ kubectl get pods
 
 
 
+# view pod events
+kubectl describe pod
+
+
+
 # view kube-system pods
 kubectl get pods -n kube-system
 
 
 
-# view pod events
-kubectl describe pod
+# view system pods yaml
+ssh ap-k8s-01 "ls -al /etc/kubernetes/manifests/"
 
 
 
