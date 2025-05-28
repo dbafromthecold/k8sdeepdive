@@ -27,6 +27,12 @@ To dive into Kubernetes to explore the various components and options for deploy
 
 ---
 
+### Agenda
+
+TBD
+
+---
+
 # Kubernetes Nodes
 <!-- .slide: style="text-align: left;"> -->
 
