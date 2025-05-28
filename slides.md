@@ -27,12 +27,15 @@ To dive into Kubernetes to explore the various components and options for deploy
 
 ---
 
-### Agenda
+## Agenda
 <!-- .slide: style="text-align: left;"> -->
 <ul>
   <li class="fragment">Node Components</li>
   <li class="fragment">Deploying Applications</li>
   <li class="fragment">Persisting Data</li>
+  <li class="fragment">Demos!</li>
+  <li class="fragment"> </li>
+  <li class="fragment">This session is for anyone who's played around with Kubernetes but wants to dive a little deeper</li>
 </ul>
 
 ---
